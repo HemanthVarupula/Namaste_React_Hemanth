@@ -13,3 +13,10 @@
 #npm install parcel
 #npm  install recat react-dom 
 
+
+# Episode3
+
+#Jsx  
+#creating Components
+#component composition 
+#Babvel , how jsx is transpiled into html to the browser
