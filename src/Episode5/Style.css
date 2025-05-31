@@ -61,3 +61,35 @@
 .btn:hover{
     cursor: pointer;
 }
+
+.shimmer{
+    height: 300px;
+    width: 200px;
+    background-color: #beb4b4;
+    border: 1px solid red;
+    display: flex;
+    gap: 10px;
+}
+
+.shimmer-ui{
+     display: flex;
+    gap: 10px;
+}
+
+.logbtn{
+    height: 40px;
+    width: 60px;
+    border: 0.7px solid black;
+    background-color: rgb(67, 67, 230);
+}
+
+.logbtn:hover{
+    cursor: pointer;
+    background-color: azure;
+}
+
+.search{
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+}
