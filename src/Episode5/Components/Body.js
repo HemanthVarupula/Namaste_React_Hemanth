@@ -1,5 +1,6 @@
 import { Restaurentcard } from "./RestaurentCard"
 import { Shimmer } from "./Shimmer";
+import { Link } from "react-router-dom";
 //no longer needed as data comming from backend api
 // import { resobj } from "../util/constants"
 import { useState,useEffect } from "react";
@@ -14,7 +15,7 @@ useEffect(()=>{
  const fetchdata=async()=>{
     const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9628669&lng=77.57750899999999&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
     const json=await data.json();
-    console.log(json)
+    // console.log(json)
     const restaurantArray=(json?.data?.cards?.filter((card)=>{return card?.card?.card?.["@type"] ===
           "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"})) .map((card) => card?.card?.card?.info);
         //   console.log(restaurantArray)
@@ -48,7 +49,7 @@ useEffect(()=>{
             <div className="res-container">
             {
                 filteredRes.map((i)=>{
-                   return  <Restaurentcard key={i.id} resData={i}/>
+                   return  (<Link className="rmc" key={i.id}   to={"restaurent/"+i.id }><Restaurentcard  resData={i}/></Link>)
                 })
             }
             </div>

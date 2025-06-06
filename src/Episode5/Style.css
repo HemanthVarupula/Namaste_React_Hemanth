@@ -93,3 +93,13 @@
     display: flex;
     gap: 10px;
 }
+
+.restromenuimg{
+    height: 200px;
+    width: 200px;
+}
+
+.rmc{
+    color: inherit;
+    text-decoration: none;
+}
