@@ -9,7 +9,7 @@ export  const Header=()=>{
                 <div className="logo"><img className ="logo1" src={Logo_Url}/></div>
                 <div className="nav-items">
                     <ul className="item">
-                        <li>Home</li>
+                        <li><Link to={"/"}>Home</Link></li>
                         <li ><Link to={"/about"}>About Us</Link></li>
                         {/* Total Page will render if u use a tag */}
                         {/* <li><a href="/about">About us</a></li> */}
