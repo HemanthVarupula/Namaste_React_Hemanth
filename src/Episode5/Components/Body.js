@@ -42,8 +42,8 @@ useEffect(()=>{
         </div>
             <div className="top-restro">
                 <button className="btn" onClick={()=>{
-                   setListofRestaurent(ListofRestaurent.filter((i)=>{return i.avgRating>4.2}))
-                    
+                   setFilteredRes(ListofRestaurent.filter((i)=>{return i.avgRating>4.0}))
+                //   console.log("button clicked")   
                 }}>To Rated Restaurent</button>
             </div>
             <div className="res-container">

@@ -6,6 +6,11 @@ import { About } from "./About";
 import { Error } from "./Error";
 import { Contact } from "./Contact";
 import { Restaurentamenu } from "./RestaurentMenu";
+import { lazy,Suspense } from "react";
+// import Greet from "./Greet";
+
+//loads only when it called 
+const Greet=lazy(()=>import("./Greet.js"))
 const App=()=>{
     return (
         <>
@@ -35,6 +40,10 @@ const appRouter=createBrowserRouter([
         {
             path:"/restaurent/:resId",
             element:<Restaurentamenu/>
+        },
+        {
+            path:"/greet",
+            element:<Suspense fallback={"Loading"}><Greet/></Suspense>
         }
         ],
         errorElement:<Error/>

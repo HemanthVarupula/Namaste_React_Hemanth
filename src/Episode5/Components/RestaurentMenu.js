@@ -1,20 +1,22 @@
-import { useEffect,useState } from "react"
+// import { useEffect,useState } from "react"
 import { Shimmer } from "./Shimmer"
 import { Cdn_Url } from "../util/constants"
 import { useParams } from "react-router-dom"
+import useRestaurentmenu from "../util/useRestaurentMenu"
 export const Restaurentamenu=()=>{
-    const [resInfo,setResInfo]=useState(null)
+    // const [resInfo,setResInfo]=useState(null)
+    // useEffect(()=>{
+    //     fetchMenu();
+    // },[])
+    // const fetchMenu =async()=>{
+    //     const data=await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9628669&lng=77.57750899999999&restaurantId="+resId+"&catalog_qa=undefined&query=Biryani&submitAction=ENTER");
+    //     const json=await data.json();
+    //     setResInfo(json.data)
+    //     console.log(json)
+    // };
+    //all the above code went inside userestaurentmenu ,created custom hook
     const {resId}=useParams();
-    useEffect(()=>{
-        fetchMenu();
-    },[])
-    const fetchMenu =async()=>{
-        const data=await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9628669&lng=77.57750899999999&restaurantId="+resId+"&catalog_qa=undefined&query=Biryani&submitAction=ENTER");
-        const json=await data.json();
-        setResInfo(json.data)
-        console.log(json)
-    };
-    
+    const resInfo=useRestaurentmenu(resId);
     const {name,cuisines,cloudinaryImageId,costForTwoMessage}=resInfo?.cards[2]?.card?.card.info||{};
     const menuCards =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
