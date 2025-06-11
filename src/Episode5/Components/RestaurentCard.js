@@ -17,3 +17,17 @@ export const Restaurentcard=(props)=>{
         </>
     )
 }
+
+//higher order component 
+//input->Restaurentcard =>promoted RestaurentCard promoted
+
+export const withPromoted=(RestaurentCard)=>{
+  return (props)=>{
+    return (
+      <>
+        <label className="promoted">Promoted</label>
+        <RestaurentCard {...props}/>
+      </>
+    )
+  }
+}

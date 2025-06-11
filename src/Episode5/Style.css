@@ -26,6 +26,7 @@
 .item li{
     list-style-type: none;
     font-size: 1.6rem;
+    padding-right:30px ;
 }
 
 
@@ -119,4 +120,84 @@ body.dark-mode {
 body.dark-mode .rmc{
     color: black; 
   background-color: #f4f4f4; 
+}
+
+.promoted{
+    position: absolute;
+    background-color: black;
+    color: whitesmoke;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.resname{
+    text-align: center;
+}
+
+.acbody{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: auto;
+    padding: 4px;
+    height: auto;
+    width: 800px;
+    border: 1px solid black;
+    background-color: #f7f4f4;
+}
+
+.acbox {
+    display: flex;
+    flex-direction: column;
+    padding: 1.4rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.acbox:hover{
+    cursor: pointer;
+}
+.acheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemlist{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.acccontents{
+    padding: 2px;
+    margin: 2px;
+    border-bottom: black 1px;
+}
+
+.item{
+    
+    border: 1px solid black;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 4px; 
+}
+
+.itemimg{
+    position: absolute;
+    height: 60px;
+    width: 90px;
+    border-radius: 8px;
+}
+.dadd{
+    position: relative;
+    top: 8px;
+}
+.addbtn{
+ padding: 2px;
+ background-color: black;
+ color: whitesmoke;
+}
+
+.addbtn:hover{
+    cursor: pointer;
+    background-color: rgb(167, 243, 161);
 }

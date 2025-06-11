@@ -1,7 +1,8 @@
 import { Logo_Url } from "../util/constants"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import useStatus from "../util/useStatus"
+import { UserContext } from "./UserContext"
 export  const Header=()=>{
     const [Login,setLogin]=useState("Login")
     const status=useStatus();
@@ -9,6 +10,8 @@ export  const Header=()=>{
   var element = document.body;
   element.classList.toggle("dark-mode");
 }
+const {loggedInuser}=useContext(UserContext)
+console.log(loggedInuser)
     return(
         <>
             <div className="header">
@@ -35,6 +38,7 @@ export  const Header=()=>{
                         <li><button className="darkmode" onClick={()=>{
                             myFunction()
                         }}>Dark Mode</button></li>
+                        <li>{loggedInuser}</li>
                     </ul>
                 </div>
                 

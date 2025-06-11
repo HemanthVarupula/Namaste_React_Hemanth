@@ -1,4 +1,4 @@
-import { Restaurentcard } from "./RestaurentCard"
+import { Restaurentcard ,withPromoted} from "./RestaurentCard"
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
 //no longer needed as data comming from backend api
@@ -8,7 +8,8 @@ import { useState,useEffect } from "react";
 
 export const Body=()=>{
  let [ListofRestaurent,setListofRestaurent]=useState([])
-let [filteredRes,setFilteredRes]=useState([]);
+ let [filteredRes,setFilteredRes]=useState([]);
+console.log(ListofRestaurent)
 useEffect(()=>{
     fetchdata();
  },[])
@@ -24,6 +25,8 @@ useEffect(()=>{
  }
 
  const [searchText,setSearchtext]=useState("")
+ const RestaurantCardPromoted=withPromoted(Restaurentcard);
+
 //  if(ListofRestaurent.length===0){
 //     return <Shimmer/>
 //  }
@@ -42,14 +45,14 @@ useEffect(()=>{
         </div>
             <div className="top-restro">
                 <button className="btn" onClick={()=>{
-                   setFilteredRes(ListofRestaurent.filter((i)=>{return i.avgRating>4.0}))
+                   setFilteredRes(ListofRestaurent.filter((i)=>{return i.avgRating>4.4}))
                 //   console.log("button clicked")   
                 }}>To Rated Restaurent</button>
             </div>
             <div className="res-container">
             {
                 filteredRes.map((i)=>{
-                   return  (<Link className="rmc" key={i.id}   to={"restaurent/"+i.id }><Restaurentcard  resData={i}/></Link>)
+                   return  (<Link className="rmc" key={i.id}   to={"restaurent/"+i.id }>{i.promoted?(<RestaurantCardPromoted  resData={i}/>):<Restaurentcard  resData={i}/>}</Link>)
                 })
             }
             </div>
