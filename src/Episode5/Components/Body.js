@@ -9,7 +9,7 @@ import { useState,useEffect } from "react";
 export const Body=()=>{
  let [ListofRestaurent,setListofRestaurent]=useState([])
  let [filteredRes,setFilteredRes]=useState([]);
-console.log(ListofRestaurent)
+// console.log(ListofRestaurent)
 useEffect(()=>{
     fetchdata();
  },[])

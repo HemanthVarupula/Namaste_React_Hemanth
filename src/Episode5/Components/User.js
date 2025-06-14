@@ -60,7 +60,7 @@ export class User extends React.Component{
             <button onClick={this.incAge}>Age+3</button><h2>{this.state.age}</h2>
             {/* a new instances of class is created , these clases are bind together  */}
             <Dummy name={"hemanth"}/>
-            <Dummy name={"sruthi"}/>
+            <Dummy name={"Deepak"}/>
         </>
         )
       

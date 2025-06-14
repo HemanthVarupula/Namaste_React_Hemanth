@@ -16,16 +16,16 @@
     margin: 12px;
 }
 
-.item{
+.itemh{
     display: flex; 
-    gap: 20px;
+    gap: 10px;
     padding-right: 80px;
     margin-top: 40px;
 }
 
-.item li{
+.itemh li{
     list-style-type: none;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     padding-right:30px ;
 }
 
@@ -200,4 +200,31 @@ body.dark-mode .rmc{
 .addbtn:hover{
     cursor: pointer;
     background-color: rgb(167, 243, 161);
+}
+
+.cartbox{
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    /* width: 500px; */
+    
+}
+
+.carttop{
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    gap: 90px;
+
+}
+
+.ccart{
+    height: 30px;
+    width: auto;
+    margin-top: 30px;
+}
+
+.cbtn{
+    display: flex;
+    justify-content: center;
 }
